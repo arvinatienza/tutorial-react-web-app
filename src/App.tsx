@@ -3,10 +3,11 @@ import React from 'react';
 import './App.css';
 import { ApolloProvider } from '@apollo/client';
 import MainNavigation from './components/MainNavigation';
+import ProjectList from './components/ProjectList';
 
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 const client = new ApolloClient({
-  uri: 'http://localhost:8000/graphql',
+  uri: 'http://100.115.92.199:8000/graphql',
   cache: new InMemoryCache()
 });
 
@@ -21,7 +22,7 @@ function App() {
         </header>
 
         <div className="App-body">
-          test
+          <ProjectList></ProjectList>
         </div>
 
         <footer className="App-footer">
