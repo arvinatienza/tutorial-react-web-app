@@ -2,12 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import './index.css';
+import { ApolloProvider } from '@apollo/client';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+
+//import { configureStore } from '@reduxjs/toolkit';
+//import { Provider as ReduxProvider } from 'react-redux';
+//import rootReducer from './reducers/rootReducer';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
+const client = new ApolloClient({
+  uri: process.env.API_URL,
+  cache: new InMemoryCache()
+});
+
+//const store = configureStore({ reducer: rootReducer });
+    //<ReduxProvider store={store}>
+    //</ReduxProvider>
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

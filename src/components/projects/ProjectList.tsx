@@ -27,7 +27,7 @@ function ProjectList() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  //console.log(data.projects.data);
+  console.log(data.projects);
 
   return (
     <ul>
