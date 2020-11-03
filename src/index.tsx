@@ -12,9 +12,10 @@ import rootReducer from './reducers/rootReducer';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+console.log(process.env);
 
 const client = new ApolloClient({
-  uri: process.env.API_URL,
+  uri: process.env.REACT_APP_API_URL,
   cache: new InMemoryCache()
 });
 

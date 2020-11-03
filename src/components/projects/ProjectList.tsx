@@ -7,7 +7,6 @@ query {
   projects {
     data {
       name
-      test
       number
       manager {
         first_name
