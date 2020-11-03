@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ApolloProvider } from '@apollo/client';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
-//import { configureStore } from '@reduxjs/toolkit';
-//import { Provider as ReduxProvider } from 'react-redux';
-//import rootReducer from './reducers/rootReducer';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider as ReduxProvider } from 'react-redux';
+import rootReducer from './reducers/rootReducer';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -18,16 +18,15 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-//const store = configureStore({ reducer: rootReducer });
-    //<ReduxProvider store={store}>
-    //</ReduxProvider>
-
+const store = configureStore({ reducer: rootReducer });
 
 ReactDOM.render(
   <React.StrictMode>
+    <ReduxProvider store={store}>
       <ApolloProvider client={client}>
         <App />
       </ApolloProvider>
+    </ReduxProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

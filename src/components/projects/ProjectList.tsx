@@ -7,6 +7,7 @@ query {
   projects {
     data {
       name
+      test
       number
       manager {
         first_name
@@ -23,6 +24,7 @@ query {
 
 function ProjectList() {
   const { loading, error, data } = useQuery(PROJECT_LIST);
+  console.log(loading)
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
