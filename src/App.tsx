@@ -20,8 +20,17 @@ function App() {
         </header>
 
         <div className="App-body">
-          <Route path="/" exact component={Home} />
-          <Route path="/projects" component={ProjectIndex} />
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-lg-2">
+                SideNav
+              </div>
+              <div>
+                <Route path="/" exact component={Home} />
+                <Route path="/projects" component={ProjectIndex} />
+              </div>
+            </div>
+          </div>
         </div>
 
         <footer className="App-footer">
