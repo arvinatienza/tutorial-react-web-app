@@ -9,11 +9,11 @@ import { Link } from 'react-router-dom';
 function MainNavigation() {
   return (
     <Navbar bg="dark" expand="lg">
-      <Navbar.Brand href="#home">
-        App
+      <Navbar.Toggle aria-controls="basic-navbar-nav" className="col-xs-1" />
+      <Navbar.Brand className="col-xs-1 col-sm-1 col-md-3 col-lg-2">
+        <Link to="/">App</Link>
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Collapse id="basic-navbar-nav" className="col-md-auto">
         <Nav className="mr-auto">
           <Nav.Link><Link to="/">Home</Link></Nav.Link>
           <Nav.Link><Link to="/projects">Projects</Link></Nav.Link>

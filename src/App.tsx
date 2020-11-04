@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import MainNavigation from './components/MainNavigation';
+import FooterNavbar from './components/FooterNavbar';
 import Home from './components/Home';
 import ProjectIndex from './components/projects/ProjectIndex';
 
@@ -16,7 +17,6 @@ function App() {
       <div className="App">
         <header className="App-header">
           <MainNavigation></MainNavigation>
-          header here
         </header>
 
         <div className="App-body">
@@ -25,7 +25,7 @@ function App() {
         </div>
 
         <footer className="App-footer">
-          footer here
+          <FooterNavbar></FooterNavbar>
         </footer>
       </div>
     </Router>
