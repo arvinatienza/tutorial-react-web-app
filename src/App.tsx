@@ -1,6 +1,6 @@
 import React from 'react';
 //import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 //import MainNavigation from './components/MainNavigation';
@@ -13,7 +13,7 @@ import ProjectIndex from './components/projects/ProjectIndex';
 function App() {
   return (
 
-    <>
+    <Router>
       <AppHeader />
 
       <div className="App-body">
@@ -24,10 +24,8 @@ function App() {
               SideNav
             </div>
 
-            <Router>
               <Route path="/" exact component={Home} />
               <Route path="/projects" component={ProjectIndex} />
-            </Router>
 
           </div>
         </div>
@@ -35,8 +33,8 @@ function App() {
 
 
       <AppFooter />
+    </Router>
 
-    </>
 
   );
 }
