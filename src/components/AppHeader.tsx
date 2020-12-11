@@ -1,40 +1,44 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
 
 import { Link } from 'react-router-dom';
 
 export function AppHeader() {
   return (
-    <header className="App-header navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-
-        <Navbar.Brand className="col-xs-auto col-lg-2">
-          <Link to="/">App</Link>
-        </Navbar.Brand>
-
-        <Navbar.Toggle aria-controls="main-navbar-nav" className="mr-auto col-xs-1" />
-        <Navbar.Collapse id="main-navbar-nav" className="col-md-auto">
+    <header className="App-header">
+      <Navbar bg="light" expand="lg">
+        <Navbar.Brand as={Link} to="/">App</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link><Link to="/projects">Projects</Link></Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Resources" id="main-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+            <NavDropdown title="Contact" id="contact-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/organizations">Organizations</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/clients">Clients</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/employees">Employees</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Departments" id="main-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <Nav.Link as={Link} to="/projects">Projects</Nav.Link>
+            <NavDropdown title="Regions" id="resources-nav-dropdown">
+              <NavDropdown.Item as={Link} to="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="#action/3.4">Separated link</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Resources" id="resources-nav-dropdown">
+              <NavDropdown.Item as={Link} to="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={Link} to="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <Form inline>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <Button variant="outline-success">Search</Button>
+          </Form>
         </Navbar.Collapse>
-
+      </Navbar>
     </header>
   );
 }
